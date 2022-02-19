@@ -1,7 +1,7 @@
 import React,{useState, useRef} from 'react'
-import LoginInput from './login_input'
+import LoginInput from '../login_input'
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import Firebase from '../DB/Firebase'
+import Firebase from '../../Db/Firebase'
 
 const auth = getAuth();
 

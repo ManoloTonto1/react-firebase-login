@@ -6,11 +6,12 @@ import {
   Routes,
 } from 'react-router-dom';
 //routes
-import Invoices from './Components/public/invoices';
+import Dashboard from './Components/Routes/Dashboard';
+import Invoices from './Components/Routes/invoices';
 import App from './App';
 
 //everything else
-import './index.css';
+import './Styles/index.css';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
@@ -20,6 +21,7 @@ ReactDOM.render(
       {/* add all routes here*/}
       <Route path="/" element={<App />} />
       <Route path="invoices" element={<Invoices />} />
+      <Route path="Dashboard" element={<Dashboard />} />
     </Routes>
   </React.StrictMode>
   </BrowserRouter>,
