@@ -24,7 +24,7 @@ ReactDOM.render(
       <Route path="/" element={<App />} />
       <Route path="/login" element={<Login />} />
       <Route path="invoices" element={<Invoices />} />
-      <Route path="Dashboard" element={<Dashboard />} />
+      <Route path="dashboard" element={<Dashboard />} />
       <Route path="*" element={<ErrorPage />} />
     </Routes>
   </React.StrictMode>

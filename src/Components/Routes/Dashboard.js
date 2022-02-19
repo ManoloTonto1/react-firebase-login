@@ -9,7 +9,6 @@ function Dashboard() {
   return (
     <div>
         <DashboardNav/>
-        welcome
         </div>
   )
 }
