@@ -9,6 +9,8 @@ import {
 import Dashboard from './Components/Routes/Dashboard';
 import Invoices from './Components/Routes/invoices';
 import App from './App';
+import ErrorPage from './Components/Routes/ErrorPage';
+import Login from './Components/Routes/Login';
 
 //everything else
 import './Styles/index.css';
@@ -20,8 +22,10 @@ ReactDOM.render(
     <Routes>
       {/* add all routes here*/}
       <Route path="/" element={<App />} />
+      <Route path="/login" element={<Login />} />
       <Route path="invoices" element={<Invoices />} />
       <Route path="Dashboard" element={<Dashboard />} />
+      <Route path="*" element={<ErrorPage />} />
     </Routes>
   </React.StrictMode>
   </BrowserRouter>,

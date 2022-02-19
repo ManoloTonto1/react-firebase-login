@@ -1,19 +1,15 @@
 import React from 'react'
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+import DashboardNav from '../DashboardNav';
+import '../../Db/Firebase';
 
 
 function Dashboard() {
-    const auth = getAuth();
-    const user = auth.currentUser;
-    onAuthStateChanged(auth, (user) => {
-        if (user) {
-            const user_identity = user.uid;
-        }
-    });
+
+
   return (
-      
     <div>
-        welcome {auth.currentUser.email}
+        <DashboardNav/>
+        welcome
         </div>
   )
 }
