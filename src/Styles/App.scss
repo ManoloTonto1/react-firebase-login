@@ -76,7 +76,31 @@ body{
         border: 1px solid;
         border-color: whitesmoke;
         margin-bottom: 1em;
-        transition: 250ms;
+        transition: 150ms;
+        outline: none;
+        background-color: var(--third-bg-color);
+        color: white;
+        font-weight: bold;
+        font-size: 1.25rem;
+        cursor: pointer;
+    }
+
+    .half{
+        &:hover{
+            background-color: #16b895;
+            
+        }
+        &:active{
+            background-color: #16b895;
+        }
+        width: 48%;
+        margin: 0 auto;
+        padding: .5em;
+        border-radius: .5em;
+        border: 1px solid;
+        border-color: whitesmoke;
+        margin-bottom: 1em;
+        transition: 50ms;
         outline: none;
         background-color: var(--third-bg-color);
         color: white;
@@ -92,29 +116,7 @@ body{
     background-color: #128f74;
     border-radius: .5em;
 }
-.login-button{
-    &:hover{
-        background-color: #16b895;
-        
-    }
-    &:active{
-        background-color: #16b895;
-    }
-    width: 48%;
-    margin: 0 auto;
-    padding: .5em;
-    border-radius: .5em;
-    border: 1px solid;
-    border-color: whitesmoke;
-    margin-bottom: 1em;
-    transition: 250ms;
-    outline: none;
-    background-color: var(--third-bg-color);
-    color: white;
-    font-weight: bold;
-    font-size: 1.25rem;
-    cursor: pointer;
-}
+
 
 .navbar{
     background-color: #128b71;

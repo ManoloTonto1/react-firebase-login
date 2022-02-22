@@ -1,10 +1,12 @@
-import React,{ useRef} from 'react'
+import React,{ useRef, useState} from 'react'
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import {useNavigate} from "react-router-dom";
 import LoginInput from '../login_input'
 import '../../Db/Firebase';
 import Header from '../Header'
 import { GoogleAuthProvider } from "firebase/auth";
+import { motion } from "framer-motion";
+
 
 
 
@@ -20,6 +22,7 @@ import { GoogleAuthProvider } from "firebase/auth";
   }
 
 const Login = () => {
+    const [isLogged,setLogged] = useState(false);
     const auth = getAuth();
     const navigate = useNavigate();
     const emailRef = useRef();
@@ -41,6 +44,7 @@ const Login = () => {
         signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           // Signed in 
+          setLogged(true);
           //const user = userCredential.user;
           navigate('/Dashboard',{replace:true});
     
@@ -66,8 +70,17 @@ const Login = () => {
 
         
         <div className="login-button-div">
-            <button className='login-button' onClick={handleLogin}>Login</button>
-            <button className='login-button' onClick={()=> {navigate("/Signup")}}>Signup</button>
+            <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.9 }}
+             className='half' 
+             onClick={handleLogin}>Login</motion.button>
+
+            <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.9 }}
+            transition={{ delay: 1 }}
+            className='half' onClick={()=> {navigate("/Signup")}}>Signup</motion.button>
         </div>
         
     </div>

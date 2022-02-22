@@ -77,8 +77,8 @@ body {
   border: 1px solid;
   border-color: whitesmoke;
   margin-bottom: 1em;
-  -webkit-transition: 250ms;
-  transition: 250ms;
+  -webkit-transition: 150ms;
+  transition: 150ms;
   outline: none;
   background-color: var(--third-bg-color);
   color: white;
@@ -95,13 +95,7 @@ body {
   background-color: #16b895;
 }
 
-.login-div {
-  padding: 5em  2em;
-  background-color: #128f74;
-  border-radius: .5em;
-}
-
-.login-button {
+.login-button-div .half {
   width: 48%;
   margin: 0 auto;
   padding: .5em;
@@ -109,8 +103,8 @@ body {
   border: 1px solid;
   border-color: whitesmoke;
   margin-bottom: 1em;
-  -webkit-transition: 250ms;
-  transition: 250ms;
+  -webkit-transition: 50ms;
+  transition: 50ms;
   outline: none;
   background-color: var(--third-bg-color);
   color: white;
@@ -119,12 +113,18 @@ body {
   cursor: pointer;
 }
 
-.login-button:hover {
+.login-button-div .half:hover {
   background-color: #16b895;
 }
 
-.login-button:active {
+.login-button-div .half:active {
   background-color: #16b895;
+}
+
+.login-div {
+  padding: 5em  2em;
+  background-color: #128f74;
+  border-radius: .5em;
 }
 
 .navbar {
