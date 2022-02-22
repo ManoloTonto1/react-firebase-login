@@ -56,11 +56,38 @@ body{
    font-weight: bold;
 }
 .login-button-div{
+    display: flex;
+    justify-content: space-between;
     width: 100%;
     margin-top: 1rem;
 
+    .full{
+        &:hover{
+            background-color: #16b895;
+            
+        }
+        &:active{
+            background-color: #16b895;
+        }
+        width: 100%;
+        margin: 0 auto;
+        padding: .5em;
+        border-radius: .5em;
+        border: 1px solid;
+        border-color: whitesmoke;
+        margin-bottom: 1em;
+        transition: 250ms;
+        outline: none;
+        background-color: var(--third-bg-color);
+        color: white;
+        font-weight: bold;
+        font-size: 1.25rem;
+        cursor: pointer;
+    }
+
 }
 .login-div{
+   
     padding: 5em  2em;
     background-color: #128f74;
     border-radius: .5em;
@@ -68,19 +95,19 @@ body{
 .login-button{
     &:hover{
         background-color: #16b895;
-        transform: scale(1.02);
+        
     }
     &:active{
         background-color: #16b895;
     }
-    width: 100%;
+    width: 48%;
     margin: 0 auto;
     padding: .5em;
     border-radius: .5em;
     border: 1px solid;
     border-color: whitesmoke;
     margin-bottom: 1em;
-    transition: 300ms;
+    transition: 250ms;
     outline: none;
     background-color: var(--third-bg-color);
     color: white;
@@ -91,7 +118,7 @@ body{
 
 .navbar{
     background-color: #128b71;
-    height: 3rem;
+    height: 4rem;
     width: 100%;
     position: fixed;
     top: 0;
@@ -105,19 +132,22 @@ body{
 
     .item{
         background-color: #128b71;
-        height: 100%;
+        height: 75%;
         color: white;
         font-size: 1.5rem;
         font-weight: bold;
         border:none;
-        transition: 150ms;
-        border-radius: 2px;
+        transition: 225ms;
+        border-radius: 1px;
         margin-right: 1em;
+        
+
         
         cursor: pointer;
         &:hover{
         
-            transform: scale(1.1);
+            background-color: #16b895;
+            
         }
     }
 
@@ -131,6 +161,32 @@ body{
         transition: 150ms;
         border-radius: 2px;
 
+    }
+    .container{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+    .searchbar{
+        background-color: #128b71;
+        height: 75%;
+        border: 1px solid rgba(245, 245, 245, 0.267);
+        color: rgba(245, 245, 245, 0.267);
+        color: white;
+        font-size: 1.5rem;
+        font-weight: bold;
+        transition: 150ms;
+        border-radius: 25px;
+        margin-left: 1rem;
+        width: 20rem;
+        padding: .5em;
+        &:focus{
+            outline: none;
+            border: 1px solid whitesmoke;
+            color: whitesmoke;
+        }
     }
 }
 

@@ -11,10 +11,12 @@ import Invoices from './Components/Routes/invoices';
 import App from './App';
 import ErrorPage from './Components/Routes/ErrorPage';
 import Login from './Components/Routes/Login';
+import SignUp from './Components/Routes/SignUp';
 
 //everything else
 import './Styles/index.css';
 import reportWebVitals from './reportWebVitals';
+
 
 ReactDOM.render(
   <BrowserRouter>
@@ -23,6 +25,7 @@ ReactDOM.render(
       {/* add all routes here*/}
       <Route path="/" element={<App />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/Signup" element={<SignUp />} />
       <Route path="invoices" element={<Invoices />} />
       <Route path="dashboard" element={<Dashboard />} />
       <Route path="*" element={<ErrorPage />} />

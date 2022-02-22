@@ -67,6 +67,7 @@ const Login = () => {
         
         <div className="login-button-div">
             <button className='login-button' onClick={handleLogin}>Login</button>
+            <button className='login-button' onClick={()=> {navigate("/Signup")}}>Signup</button>
         </div>
         
     </div>

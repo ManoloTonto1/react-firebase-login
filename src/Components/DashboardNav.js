@@ -2,12 +2,8 @@ import React from 'react'
 import { getAuth, signOut} from "firebase/auth";
 import {useNavigate} from "react-router-dom";
 import '../Db/Firebase';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
+import SearchBar from './SearchBar';
+
 
 
 
@@ -33,26 +29,20 @@ function DashboardNav() {
 
 
 return (
-  <Box sx={{ flexGrow: 1 }}>
-  <AppBar position="static">
-    <Toolbar>
-      <IconButton
-        size="large"
-        edge="start"
-        color="inherit"
-        aria-label="menu"
-        sx={{ mr: 2 }}
-      >
-      
-      </IconButton>
-      <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-        Galery
-      </Typography>
-      <Button color="inherit" onClick={handleLogout}>Logout</Button>
-    </Toolbar>
-  </AppBar>
-</Box>
-);
+<nav className="navbar">
+
+  <div className='container'>
+  <SearchBar/>
+  </div>
+  <div className='container'>
+    
+  </div>
+  <div className='container'>
+  <button className='item' onClick={handleLogout}>Logout</button>
+  </div>
+
+  </nav>
+  );
     
 }
 
