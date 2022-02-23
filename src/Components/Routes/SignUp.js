@@ -6,6 +6,32 @@ import '../../Db/Firebase';
 import Header from '../Header'
 import { GoogleAuthProvider } from "firebase/auth";
 import { user } from '../../Db/Firebase';
+import {motion} from "framer-motion";
+
+const slidein = {
+  hidden: {
+    x: "100vh",
+    opacity: 0,
+  },
+  visible: {
+    x: "0",
+    opacity: 1,
+    transition: {
+      duration: 0.2,
+      type: "spring",
+      damping: 20,
+      stiffness: 200,
+    },
+  },
+  loggedin:{
+    y: "100vh",
+    opacity: 0,
+  },
+  exit: {
+    x: "-100vh",
+    opacity: 0,
+  },
+};
 
 function SignUp() {
   const auth = getAuth();
@@ -50,21 +76,32 @@ function SignUp() {
 
 
 return (
-  <div className='login-div'>
+  <motion.div
+  variants={slidein}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+  className='login-div'>
       <Header header=""/>
       <LoginInput label = "Email" type = "text" id ="email" reff = {emailRef}/>
       <LoginInput label = "Password" type = "password" id = "password" reff = {passwordRef}/>
 
       
       <div className="login-button-div">
-          <button className='full' onClick={handleSignup}>Signup</button>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.9 }}
+            className='full' onClick={handleSignup}>Signup</motion.button>
       </div>
       <div className="login-button-div">
-          <button className='full' onClick={()=> {navigate("/Login")}}>Back to Login</button>
+          <motion.button 
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.9 }}
+          className='full' onClick={()=> {navigate("/Login")}}>Back to Login</motion.button>
       </div>
           
       
-  </div>
+  </motion.div>
 )
 }
 

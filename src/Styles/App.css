@@ -5,6 +5,7 @@
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  overflow: hidden;
 }
 
 *, *:before, *:after {
@@ -13,7 +14,9 @@ html {
 }
 
 body {
-  background-color: #000000;
+  background: #53f441;
+  background: -webkit-gradient(linear, right top, left top, color-stop(32%, #53f441), color-stop(70%, #00ffa2));
+  background: linear-gradient(270deg, #53f441 32%, #00ffa2 70%);
 }
 
 .login-header {
@@ -123,7 +126,7 @@ body {
 
 .login-div {
   padding: 5em  2em;
-  background-color: #128f74;
+  background-color: #19df23;
   border-radius: .5em;
 }
 
@@ -153,8 +156,8 @@ body {
   font-size: 1.5rem;
   font-weight: bold;
   border: none;
-  -webkit-transition: 225ms;
-  transition: 225ms;
+  -webkit-transition: 150ms;
+  transition: 150ms;
   border-radius: 1px;
   margin-right: 1em;
   cursor: pointer;
@@ -210,5 +213,12 @@ body {
   outline: none;
   border: 1px solid whitesmoke;
   color: whitesmoke;
+}
+
+.example-container div {
+  background: white;
+  border-radius: 30px;
+  width: 150px;
+  height: 150px;
 }
 /*# sourceMappingURL=App.css.map */

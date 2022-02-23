@@ -9,6 +9,51 @@ import Modal from './Modal';
 
 
 
+const slidein = {
+  hidden: {
+    y: "-100vh",
+    opacity: 0,
+  },
+  visible: {
+    y: "0",
+    opacity: 1,
+    transition: {
+      duration: 0.2,
+      type: "spring",
+      damping: 25,
+      stiffness: 180,
+    },
+    
+  },
+  exit: {
+    y: "-100vh",
+    opacity: 0,
+    transition:{duration: 1},
+  },
+};
+
+const slidein_search = {
+  hidden: {
+    y: "-100vh",
+    opacity: 0,
+  },
+  visible: {
+    y: "0",
+    opacity: 1,
+    transition: {
+      duration: 0.2,
+      type: "spring",
+      damping: 22,
+      stiffness: 180,
+      delay: 0.2,
+    },
+    
+  },
+  exit: {
+    y: "-100vh",
+    opacity: 0,
+  },
+};
 
 function DashboardNav() {
   const auth = getAuth();
@@ -35,11 +80,22 @@ function DashboardNav() {
 
 return (
 <>
-<nav className="navbar">
+<motion.nav 
+variants={slidein}
+initial="hidden"
+animate="visible"
+exit="exit"
+className="navbar">
 
-  <div className='container'>
+  <motion.div
+  variants={slidein_search}
+  initial="hidden"
+  animate="visible"
+  exit="exit" 
+  
+  className='container'>
   <SearchBar/>
-  </div>
+  </motion.div>
   <div className='container'>
   <motion.button 
         whileHover={{ scale: 1.1 }}
@@ -64,7 +120,7 @@ return (
     </motion.button>
   </div>
 
-  </nav>
+  </motion.nav>
 
   <AnimatePresence
     // Disable any initial animations on children that

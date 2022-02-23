@@ -2,22 +2,37 @@ import "./Styles/App.css";
 import CheckAuth from './Components/Routes/CheckAuth';
 import './Db/Firebase';
 import {motion, AnimatePresence} from "framer-motion";
+import {
+  Route,
+  Routes,
+  useLocation,
+} from 'react-router-dom';
+//routes
+import Dashboard from './Components/Routes/Dashboard';
+import Invoices from './Components/Routes/invoices';
+import ErrorPage from './Components/Routes/ErrorPage';
+import Login from './Components/Routes/Login';
+import SignUp from './Components/Routes/SignUp';
 
 function App() {
-  return (
-<AnimatePresence
+  const location = useLocation();
 
-    // Disable any initial animations on children that
-    // are present when the component is first rendered
-    initial={false}
-    // Only render one component at a time.
-    // The exiting component will finish its exit
-    // animation before entering component is rendered
-    exitBeforeEnter={true}
-    // Fires when all exiting nodes have completed animating out
-    onExitComplete={() => null}>
+  return (
+<AnimatePresence exitBeforeEnter={true}>
+
+    <Routes location={location} key={location.pathname}>
+      {/* add all routes here*/}
+      <Route path="/" element={<CheckAuth />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/Signup" element={<SignUp />} />
+      <Route path="invoices" element={<Invoices />} />
+      <Route path="dashboard" element={<Dashboard />} />
+      <Route path="*" element={<ErrorPage />} />
+    </Routes>
+ 
+
+
       
-  <CheckAuth/>
 </AnimatePresence>
 
 
