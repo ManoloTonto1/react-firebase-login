@@ -1,3 +1,12 @@
+
+$Main-color: rgb(255, 199, 89);
+$Secondary-color: rgb(255, 123, 156);
+$Third-color: rgb(96, 113, 150);
+$Fourth-color: rgb(186, 191, 209);
+$Fifth-color: rgb(232, 233, 237);
+$white: rgb(255, 255, 255);
+$darker:0.96;
+$lighter:1.04;
 *{
     font-family: 'Oswald', sans-serif;
 }
@@ -9,8 +18,8 @@ html {
     box-sizing: inherit;
   }
 body{
-    background: rgb(83,244,65);
-    background: linear-gradient(270deg, rgba(83,244,65,1) 32%, rgba(0,255,162,1) 70%); 
+    background: $Third-color;
+    background: linear-gradient(270deg, $Main-color 32%, $Secondary-color 70%); 
 }
   
   
@@ -18,7 +27,7 @@ body{
 .login-header{
     font-size: 2.5rem;
     text-align: center;
-    color: white;
+    color: $white;
 }
 .login-div{
     
@@ -43,18 +52,18 @@ body{
     border: none;
     border-bottom: 1px solid whitesmoke;
     margin-bottom: 1em;
-    transition: 600ms;
+    transition: 100ms;
     outline: none;
     background-color: var(--third-bg-color);
     display: block;
     font-size: 1.2rem;
     &:focus{
-        border-bottom: 1px solid rgb(12, 87, 52);
+        border-bottom: 1px solid $Main-color;
     }
 }
 
 .login-label{
-   color: white;
+   color: $white;
    font-size: 1.25rem;
    font-weight: bold;
 }
@@ -65,13 +74,6 @@ body{
     margin-top: 1rem;
 
     .full{
-        &:hover{
-            background-color: #16b895;
-            
-        }
-        &:active{
-            background-color: #16b895;
-        }
         width: 100%;
         margin: 0 auto;
         padding: .5em;
@@ -81,48 +83,60 @@ body{
         margin-bottom: 1em;
         transition: 150ms;
         outline: none;
-        background-color: var(--third-bg-color);
         color: white;
         font-weight: bold;
         font-size: 1.25rem;
         cursor: pointer;
-    }
+        color: $white;
+        background-color: $Main-color;
 
-    .half{
         &:hover{
-            background-color: #16b895;
+            background-color: $Main-color;
             
         }
         &:active{
-            background-color: #16b895;
+            background-color: $Main-color*$darker*$darker;
         }
+
+    }
+
+    .half{
         width: 48%;
         margin: 0 auto;
         padding: .5em;
         border-radius: .5em;
         border: 1px solid;
-        border-color: whitesmoke;
+        border-color: $white;
         margin-bottom: 1em;
         transition: 50ms;
         outline: none;
-        background-color: var(--third-bg-color);
-        color: white;
         font-weight: bold;
         font-size: 1.25rem;
         cursor: pointer;
+        color: $white;
+        background-color: $Main-color;
+
+        &:hover{
+            background-color: $Main-color;
+            
+        }
+        &:active{
+            background-color: $Main-color*$darker*$darker;
+        }
+
     }
 
 }
 .login-div{
    
     padding: 5em  2em;
-    background-color: rgb(25, 223, 35);
+    background-color: $Secondary-color*$darker;
     border-radius: .5em;
 }
 
 
 .navbar{
-    background-color: #128b71;
+    background-color: $Main-color;
     height: 4rem;
     width: 100%;
     position: fixed;
@@ -136,28 +150,28 @@ body{
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 
     .item{
-        background-color: #128b71;
+        background-color: $Main-color;
         height: 75%;
         color: white;
         font-size: 1.5rem;
         font-weight: bold;
         border:none;
-        transition: 150ms;
+        transition: 100ms;
         border-radius: 1px;
         margin-right: 1em;
-        
-
-        
         cursor: pointer;
         &:hover{
         
-            background-color: #16b895;
-            
+            background-color: $Main-color*$lighter;
+            border-radius: 10%;
+        }
+        &:active{
+            background-color: $Main-color*$darker;
         }
     }
 
     .logo{
-        background-color: #128b71;
+        background-color: $Main-color;
         height: 100%;
         border: none;
         color: white;
@@ -175,11 +189,10 @@ body{
         height: 100%;
     }
     .searchbar{
-        background-color: #128b71;
+        background-color: $Main-color;
         height: 75%;
-        border: 1px solid rgba(245, 245, 245, 0.267);
-        color: rgba(245, 245, 245, 0.267);
-        color: white;
+        border: 1px solid $Main-color*(2*$darker);
+        color: $Third-color;
         font-size: 1.5rem;
         font-weight: bold;
         transition: 150ms;
@@ -189,20 +202,84 @@ body{
         padding: .5em;
         &:focus{
             outline: none;
-            border: 1px solid whitesmoke;
-            color: whitesmoke;
+            border: 1px solid $Secondary-color;
+            color: $Third-color*$darker;
         }
     }
 
 
 }
-.example-container div {
-    background: white;
-    border-radius: 30px;
-    width: 150px;
-    height: 150px;
+.top-wave {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    svg {
+        position: relative;
+        display: block;
+        width: calc(116% + 1.3px);
+        height: 146px;
+        transform: rotateY(180deg);
+        animation-name: example2;
+        animation-duration: 2.5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+        animation-direction: alternate-reverse;
+    }
+    .shape-fill {
+        fill: $Third-color;
+    }
+}
 
+@keyframes example {
+    0%    {height: 200px; }
+    50%  {height:250px}
+    100% {height:200px;}
   }
+  @keyframes example2 {
+    0%    {height: 146px; }
+    75%  {height:200px}
+    100% {height:146px;}
+  }
+.bottom-wave {
+    z-index: -1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+    svg {
+        position: relative;
+        display: block;
+        width: calc(179% + 1.3px);
+        height: 200px;
+        animation-name: example;
+        animation-duration: 2.5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+    }
+    .shape-fill {
+        fill: $Third-color*$lighter;
+    }
+}
 
+
+.error{
+    transition: 100ms;
+    background-color: rgba(255, 111, 111, 0.623);
+    border-radius: 1rem;
+    border: 1px solid red;
+    text-align: center;
+    color: rgb(253, 17, 17);
+    font-size: 1.2rem;
+    margin-top: .5rem;
+    font-weight: bold;
+    font-size: larger;
+}
 
 

@@ -14,9 +14,9 @@ html {
 }
 
 body {
-  background: #53f441;
-  background: -webkit-gradient(linear, right top, left top, color-stop(32%, #53f441), color-stop(70%, #00ffa2));
-  background: linear-gradient(270deg, #53f441 32%, #00ffa2 70%);
+  background: #607196;
+  background: -webkit-gradient(linear, right top, left top, color-stop(32%, #ffc759), color-stop(70%, #ff7b9c));
+  background: linear-gradient(270deg, #ffc759 32%, #ff7b9c 70%);
 }
 
 .login-header {
@@ -43,8 +43,8 @@ body {
   border: none;
   border-bottom: 1px solid whitesmoke;
   margin-bottom: 1em;
-  -webkit-transition: 600ms;
-  transition: 600ms;
+  -webkit-transition: 100ms;
+  transition: 100ms;
   outline: none;
   background-color: var(--third-bg-color);
   display: block;
@@ -52,7 +52,7 @@ body {
 }
 
 .login-input:focus {
-  border-bottom: 1px solid #0c5734;
+  border-bottom: 1px solid #ffc759;
 }
 
 .login-label {
@@ -83,19 +83,20 @@ body {
   -webkit-transition: 150ms;
   transition: 150ms;
   outline: none;
-  background-color: var(--third-bg-color);
   color: white;
   font-weight: bold;
   font-size: 1.25rem;
   cursor: pointer;
+  color: white;
+  background-color: #ffc759;
 }
 
 .login-button-div .full:hover {
-  background-color: #16b895;
+  background-color: #ffc759;
 }
 
 .login-button-div .full:active {
-  background-color: #16b895;
+  background-color: #ebb752;
 }
 
 .login-button-div .half {
@@ -104,34 +105,34 @@ body {
   padding: .5em;
   border-radius: .5em;
   border: 1px solid;
-  border-color: whitesmoke;
+  border-color: white;
   margin-bottom: 1em;
   -webkit-transition: 50ms;
   transition: 50ms;
   outline: none;
-  background-color: var(--third-bg-color);
-  color: white;
   font-weight: bold;
   font-size: 1.25rem;
   cursor: pointer;
+  color: white;
+  background-color: #ffc759;
 }
 
 .login-button-div .half:hover {
-  background-color: #16b895;
+  background-color: #ffc759;
 }
 
 .login-button-div .half:active {
-  background-color: #16b895;
+  background-color: #ebb752;
 }
 
 .login-div {
   padding: 5em  2em;
-  background-color: #19df23;
+  background-color: #f57696;
   border-radius: .5em;
 }
 
 .navbar {
-  background-color: #128b71;
+  background-color: #ffc759;
   height: 4rem;
   width: 100%;
   position: fixed;
@@ -150,25 +151,30 @@ body {
 }
 
 .navbar .item {
-  background-color: #128b71;
+  background-color: #ffc759;
   height: 75%;
   color: white;
   font-size: 1.5rem;
   font-weight: bold;
   border: none;
-  -webkit-transition: 150ms;
-  transition: 150ms;
+  -webkit-transition: 100ms;
+  transition: 100ms;
   border-radius: 1px;
   margin-right: 1em;
   cursor: pointer;
 }
 
 .navbar .item:hover {
-  background-color: #16b895;
+  background-color: #ffcf5d;
+  border-radius: 10%;
+}
+
+.navbar .item:active {
+  background-color: #f5bf55;
 }
 
 .navbar .logo {
-  background-color: #128b71;
+  background-color: #ffc759;
   height: 100%;
   border: none;
   color: white;
@@ -194,11 +200,10 @@ body {
 }
 
 .navbar .searchbar {
-  background-color: #128b71;
+  background-color: #ffc759;
   height: 75%;
-  border: 1px solid rgba(245, 245, 245, 0.267);
-  color: rgba(245, 245, 245, 0.267);
-  color: white;
+  border: 1px solid #ffffab;
+  color: #607196;
   font-size: 1.5rem;
   font-weight: bold;
   -webkit-transition: 150ms;
@@ -211,14 +216,132 @@ body {
 
 .navbar .searchbar:focus {
   outline: none;
-  border: 1px solid whitesmoke;
-  color: whitesmoke;
+  border: 1px solid #ff7b9c;
+  color: #5c6c90;
 }
 
-.example-container div {
-  background: white;
-  border-radius: 30px;
-  width: 150px;
-  height: 150px;
+.top-wave {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.top-wave svg {
+  position: relative;
+  display: block;
+  width: calc(116% + 1.3px);
+  height: 146px;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  -webkit-animation-name: example2;
+          animation-name: example2;
+  -webkit-animation-duration: 2.5s;
+          animation-duration: 2.5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  animation-direction: alternate-reverse;
+}
+
+.top-wave .shape-fill {
+  fill: #607196;
+}
+
+@-webkit-keyframes example {
+  0% {
+    height: 200px;
+  }
+  50% {
+    height: 250px;
+  }
+  100% {
+    height: 200px;
+  }
+}
+
+@keyframes example {
+  0% {
+    height: 200px;
+  }
+  50% {
+    height: 250px;
+  }
+  100% {
+    height: 200px;
+  }
+}
+
+@-webkit-keyframes example2 {
+  0% {
+    height: 146px;
+  }
+  75% {
+    height: 200px;
+  }
+  100% {
+    height: 146px;
+  }
+}
+
+@keyframes example2 {
+  0% {
+    height: 146px;
+  }
+  75% {
+    height: 200px;
+  }
+  100% {
+    height: 146px;
+  }
+}
+
+.bottom-wave {
+  z-index: -1;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.bottom-wave svg {
+  position: relative;
+  display: block;
+  width: calc(179% + 1.3px);
+  height: 200px;
+  -webkit-animation-name: example;
+          animation-name: example;
+  -webkit-animation-duration: 2.5s;
+          animation-duration: 2.5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
+
+.bottom-wave .shape-fill {
+  fill: #64769c;
+}
+
+.error {
+  -webkit-transition: 100ms;
+  transition: 100ms;
+  background-color: rgba(255, 111, 111, 0.623);
+  border-radius: 1rem;
+  border: 1px solid red;
+  text-align: center;
+  color: #fd1111;
+  font-size: 1.2rem;
+  margin-top: .5rem;
+  font-weight: bold;
+  font-size: larger;
 }
 /*# sourceMappingURL=App.css.map */
