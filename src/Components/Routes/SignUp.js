@@ -7,6 +7,7 @@ import Header from '../Header'
 import { GoogleAuthProvider } from "firebase/auth";
 import { user } from '../../Db/Firebase';
 import {motion} from "framer-motion";
+import BackgroundComp from '../BackgroundComp'
 
 const slidein = {
   hidden: {
@@ -26,10 +27,12 @@ const slidein = {
   loggedin:{
     y: "100vh",
     opacity: 0,
+    transition: { duration: 0.5 }
   },
   exit: {
     x: "-100vh",
     opacity: 0,
+    transition: { duration: 0.5 }
   },
 };
 
@@ -76,7 +79,8 @@ function SignUp() {
 
 
 return (
-  <motion.div
+  <>
+    <motion.div
   variants={slidein}
             initial="hidden"
             animate="visible"
@@ -102,6 +106,9 @@ return (
           
       
   </motion.div>
+  <BackgroundComp/>
+  </>
+
 )
 }
 

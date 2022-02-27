@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import { getAuth, signOut} from "firebase/auth";
-import {useNavigate} from "react-router-dom";
+import {useNavigate, His} from "react-router-dom";
 import '../Db/Firebase';
 import SearchBar from './SearchBar';
 import {motion, AnimatePresence} from 'framer-motion';
@@ -18,7 +18,7 @@ const slidein = {
     y: "0",
     opacity: 1,
     transition: {
-      duration: 0.2,
+      duration: 1,
       type: "spring",
       damping: 25,
       stiffness: 180,
@@ -41,7 +41,7 @@ const slidein_search = {
     y: "0",
     opacity: 1,
     transition: {
-      duration: 0.2,
+      duration: 1,
       type: "spring",
       damping: 22,
       stiffness: 180,
@@ -62,7 +62,7 @@ function DashboardNav() {
   const handleLogout = () => {
   signOut(auth).then(() => {
     // Sign-out successful.
-    navigate('/login');
+    navigate('/login', { replace: true });
 
   }).catch((error) => {
     // An error happened.

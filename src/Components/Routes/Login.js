@@ -6,7 +6,7 @@ import '../../Db/Firebase';
 import Header from '../Header'
 import { GoogleAuthProvider } from "firebase/auth";
 import { motion} from "framer-motion";
-import BackgroundComp from '../Background_comp';
+import BackgroundComp from '../BackgroundComp';
 
 
 const slidein = {
@@ -19,7 +19,7 @@ const slidein = {
     x: "0",
     opacity: 1,
     transition: {
-      duration: 0.2,
+      duration: 1,
       type: "spring",
       damping: 20,
       stiffness: 200,
@@ -29,13 +29,28 @@ const slidein = {
   loggedin:{
     y: "-100vh",
     opacity: 0,
+    transition: { duration: 0.5 }
     
   },
   exit: {
+    
     x: "100vh",
     opacity: 0,
+    transition: { duration: 0.5 }
   },
 };
+const errordiv = {
+  hidden: {
+    opacity: 0,
+},
+visible: {
+    opacity: 1,
+},
+exit: {
+    opacity: 0,
+}
+}
+
 
 
 
@@ -46,6 +61,7 @@ const slidein = {
   }
 
 const Login = () => {
+  const [welcome, setWelcome] = useState(getWelcome)
     const [isLogged,setLogged] = useState(false);
     const [[error,errorCode,errorMessage],setError] = useState([false,null,null]);
 
@@ -119,8 +135,8 @@ const Login = () => {
             exit={isLogged ? "loggedin" : "exit"}
             className='login-div'>
 
-        <Header header={getWelcome()}/>
-        {error ? <div className='error'>{errorCode && errorMessage}</div> : null}
+        <Header header={welcome}/>
+        {error ? <motion.div variants={errordiv} initial="hidden" animate="visible" exit="exit" className='error'>{errorCode && errorMessage}</motion.div> : null}
         <LoginInput label = "Email" type = "text" id ="email" reff = {emailRef}/>
         <LoginInput label = "Password" type = "password" id = "password" reff = {passwordRef}/>
 
