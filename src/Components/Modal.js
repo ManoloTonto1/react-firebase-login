@@ -36,7 +36,7 @@ const Modal = ({ handleClose, text }) => {
             exit="exit"
           >
             <p>{text}</p>
-            <button onClick={handleClose}>Close</button>
+            <i className="fa-solid fa-circle-xmark" onClick={handleClose}></i>
           </motion.div>
       </Backdrop>
     );
