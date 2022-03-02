@@ -1,5 +1,9 @@
 import { motion } from "framer-motion";
 import Backdrop from "./Backdrop";
+import { doc, setDoc } from "firebase/firestore"; 
+import { getFirestore } from "firebase/firestore"
+
+import "../Db/Firebase";
 
 const dropIn = {
     hidden: {
@@ -23,7 +27,19 @@ const dropIn = {
   };
   
 
+  const db = getFirestore();
+  // Add a new document in collection "cities"
+  const sendDoc = () =>{
+    setDoc(doc(db, "cities", "California"), {
+      name: "Californication",
+      state: "CA",
+      country: "USa"
+    });
+  }
+
+
 const Modal = ({ handleClose, text }) => {
+  
 
     return (
       <Backdrop onClick={handleClose}>
@@ -37,6 +53,8 @@ const Modal = ({ handleClose, text }) => {
           >
             <p>{text}</p>
             <i className="fa-solid fa-circle-xmark" onClick={handleClose}></i>
+            <input type="text"/> 
+            <input type="submit" value="Submit" onClick={sendDoc} />
           </motion.div>
       </Backdrop>
     );
