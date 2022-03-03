@@ -1,31 +1,42 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 import DashboardNav from '../DashboardNav';
 import '../../Db/Firebase';
-import { doc, onSnapshot, getFirestore } from "firebase/firestore";
+import { query,where,doc, onSnapshot, getFirestore, collection } from "firebase/firestore";
 
 const db = getFirestore();
 
 
 
 function Dashboard() {
-  const [city, setCity] = useState("");
+  const [cities, setCity] = useState([]);
+  useEffect(() => {
+    const getNames = async () => {
+      const q = query(collection(db, "cities"), where("state", "==", "CA"));
+      onSnapshot(q, (querySnapshot) => {
+        const cities = [];
+        querySnapshot.forEach((doc) => {
+            cities.push(doc.data().name);
+        });
+        setCity([cities]);
+      });
+  };
+  getNames();
 
-  onSnapshot(doc(db, "cities","LA"), (doc) => {
-    console.log(doc.data());
-
-    setCity(doc.data().name);
-  });
+  }, []);
+  
 
   return (
     <div>
 
         <DashboardNav/>
         <div id='dashboard'>
-          <p>{city}</p>
           
-          </div>
-
+        {cities.map((city) => {
+          return <div> {city}</div>
+        })}
         </div>
+
+    </div>
   )
 }
 
