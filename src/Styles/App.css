@@ -389,5 +389,24 @@ body {
 
 #dashboard {
   margin-top: 4rem;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+}
+
+.module {
+  background-color: #607196;
+  color: fff;
+  text-decoration: none;
+  border-radius: 10px;
+  border: 0.5px solid #babfd1;
+  -webkit-transition: 100ms;
+  transition: 100ms;
+  margin-top: 1em;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+  margin-right: 1em;
 }
 /*# sourceMappingURL=App.css.map */
