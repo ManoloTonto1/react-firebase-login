@@ -1,3 +1,16 @@
+# Firebase React Authentication
+
+With this project i was messing around with Firebase Authentication and Framer Motion Animations.
+
+
+
+
+## Screenshots
+
+![App Screenshot](https://i.ibb.co/JH2Yp8Z/Screenshot-15.png)
+![App Screenshot](https://i.ibb.co/KG7PZDM/Screenshot-16.png)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
