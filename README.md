@@ -8,7 +8,8 @@ With this project i was messing around with Firebase Authentication and Framer M
 ## Screenshots
 
 ![App Screenshot](https://i.ibb.co/JH2Yp8Z/Screenshot-15.png)
-![App Screenshot](https://i.ibb.co/KG7PZDM/Screenshot-16.png)
+
+![App Screenshot 2](https://i.ibb.co/KG7PZDM/Screenshot-16.png)
 
 
 # Getting Started with Create React App
